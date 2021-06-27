@@ -1,0 +1,30 @@
+{
+  "name": "mardoniomelo/teste_pratico",
+  "description": "Teste prático para vaga de Desenvolvedor Back-end PHP.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mardônio Melo Filho",
+      "email": "mardonio.quimico@gmail.com",
+      "role": "Developer"     
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    },
+    "files": [
+      "src/config/app.php"
+    ]
+  },
+  "require": {
+    "php": "~7.3.0 || ~7.4.0 || ~8.0.0",
+    "slim/slim": "4.*",    
+    "slim/psr7": "^1.3",
+    "coffeecode/datalayer": "1.1.*"   
+  }
+}
