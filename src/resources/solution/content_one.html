@@ -1,0 +1,100 @@
+<!-- Heading-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Heading Title-->
+        <h1 class="masthead-heading text-uppercase mb-0">
+            <a>Teste Prático #1</a>
+        </h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Section-->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Problema</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-lg-2 mb-2">
+                <img class="img-fluid" src="{{path}}assets/img/chico-juca.jpg" alt="biblioteca" />
+            </div>
+            <div class="col-md-10 col-lg-10 mb-10">
+                Chico tem 1,50m e cresce 2cm por ano, enquanto Juca tem 1,10m e cresce 3cm por ano. Construa um
+                algoritmo que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Solução</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Informe a altura de Chico e Juca e veja o resultado no histórico. Você também pode editar as alturas
+                    informadas.</p>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-12">              
+                <form id="j_form">
+                    <label class="form-label">Altura de Chico</label>
+                    <div class="input-group mb-3">
+                        <input type="text" name="chico" class="form-control altura" placeholder="Informe a altura de chico">
+                        <span class="input-group-text">metros</span>
+                    </div>
+                    <label class="form-label">Altura de Juca</label>
+                    <div class="input-group mb-3">
+                        <input type="text"  name="juca" class="form-control altura" placeholder="Informe a altura de Juca">
+                        <span class="input-group-text">metros</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="j_create"><i class="fas fa-save"></i> Salvar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Histórico</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-history"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Chico</th>
+                            <th scope="col">Juca</th>
+                            <th scope="col">Estimativa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="j_history">                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

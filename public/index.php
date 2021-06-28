@@ -9,11 +9,8 @@ use Slim\Factory\AppFactory;
 # Iniciar App
 $app = AppFactory::create();
 
-# Desativar erros em produção
-#$app->addErrorMiddleware(false, true, true);
-
 # Define o caminho base
-$app->setBasePath("/teste_pratico");
+PATH_SUB === "" ?: $app->setBasePath(PATH_SUB);
 
 # Rotas do App
-require '../src/routes/api.php';
+require '../src/routes/router.php';

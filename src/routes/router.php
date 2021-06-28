@@ -2,6 +2,7 @@
 
 use Slim\Exception\HttpNotFoundException;
 use Src\Controllers\Home\HomeController;
+use Src\Controllers\Solution\SolutionController;
 
 
 $app->options('/{routes:.+}', function ($request, $response, $args) {
@@ -22,10 +23,14 @@ $app->add(function ($request, $handler) {
 // --------------------------+
 
 //Rotas GET
-$app->get('/', HomeController::class . ":home");
-//$app->get('/home/{id}', Api::class . ":home"); 
+$app->get('/', HomeController::class . ":pageHome");
+$app->get('/solucao/1', SolutionController::class . ":pageSolutionOne");
+$app->get('/solucao/2', SolutionController::class . ":pageSolutionTwo");
+$app->get('/solucao/3', SolutionController::class . ":pageSolutionThree");
+$app->get('/solucao/4', SolutionController::class . ":pageSolutionFour");
 
 // Rotas POST
+$app->post('/solucao/one/create', SolutionController::class . ":createSolutionOne");
 
 // --------------------------+
 // Fim rotas a partir daqui

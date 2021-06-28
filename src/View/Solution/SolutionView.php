@@ -1,18 +1,20 @@
 <?php
 
-namespace Src\View\Home;
+namespace Src\View\Solution;
 
 use Src\View\DefaultView\DefaultView;
 
 /**
- * Class para administrar view da home
+ * Class para administrar view das soluções
  */
-class HomeView extends DefaultView
+class SolutionView extends DefaultView
 {
+    private $path;
 
     public function __construct()
     {
         $this->setDirTpl();
+        $this->path = PATH_SUB !== "" ? PATH_SUB . "/" : "";
     }
 
     /**
@@ -21,13 +23,13 @@ class HomeView extends DefaultView
      * @param array $data
      * @return string
      */
-    public function tplHomeView(): string
-    {      
+    public function tplSolutionOne(): string
+    {
         return $this->page(
             $this->head(),
             $this->body(
                 ["navbar", "content", "footer", "scriptjs", "path"],
-                [$this->navbar(), $this->content(), $this->footer(), "home", ""]
+                [$this->navbar(), $this->content(), $this->footer(), "solution_one", $this->path]
             )
         );
     }
@@ -45,9 +47,9 @@ class HomeView extends DefaultView
             "path"
         ]);
         $this->setData([
-            "Teste Prático",
+            "Soluções - Teste Prático",
             "Teste Prático para vaga de desenvolvedor back-end",
-            ""
+            $this->path
         ]);
         $this->setTplHtml("default/head");
         return $this->getWrite();
@@ -60,11 +62,11 @@ class HomeView extends DefaultView
      */
     public function navbar(): string
     {
-        $this->setDataName([          
+        $this->setDataName([
             "path"
         ]);
-        $this->setData([          
-            ""
+        $this->setData([
+            $this->path
         ]);
         $this->setTplHtml("default/navbar");
         return $this->getWrite();
@@ -77,7 +79,7 @@ class HomeView extends DefaultView
      */
     public function content(): string
     {
-        $this->setTplHtml("home/content");
+        $this->setTplHtml("solution/content_one");
         return $this->getWrite();
     }
 
@@ -139,5 +141,16 @@ class HomeView extends DefaultView
         $this->setData([$head, $body]);
         $this->setTplHtml("default/index");
         return $this->getWrite();
+    }
+
+    /**
+     * Formatar dados para retorno json
+     *
+     * @param array|objeto $arr
+     * @return string
+     */
+    public function encodeJson($arr): string
+    {
+        return json_encode($arr);
     }
 }

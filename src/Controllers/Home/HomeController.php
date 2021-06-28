@@ -7,7 +7,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Src\View\Home\HomeView;
 
 /**
- * Classe controller principal da API
+ * Classe controller da home
  */
 class HomeController
 {   
@@ -27,7 +27,7 @@ class HomeController
      * @param array $args
      * @return void
      */
-    public function home(Request $request, Response $response, array $args)
+    public function pageHome(Request $request, Response $response, array $args)
     {
         $payload = $this->home_view->tplHomeView();
         $response->getBody()->write($payload);
