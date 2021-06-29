@@ -54,7 +54,7 @@ class  SolutionOneModel
             $chico += 2;
             $juca += 3;
             $qtd_ano++;
-        }       
+        }
 
         return $qtd_ano;
     }
@@ -75,8 +75,8 @@ class  SolutionOneModel
                 $result[$key]['altura_chico'] = $arr->data()->altura_chico;
                 $result[$key]['altura_juca'] = $arr->data()->altura_juca;
                 $result[$key]['altura_estimativa'] = $arr->data()->altura_estimativa;
-                $result[$key]['updated_at'] = $arr->data()->altura_updated_at;
-                $result[$key]['created_at'] = $arr->data()->altura_created_at;
+                $result[$key]['updated_at'] = $arr->data()->updated_at;
+                $result[$key]['created_at'] = $arr->data()->created_at;
             }
         }
         return $result;
@@ -98,18 +98,56 @@ class  SolutionOneModel
     }
 
     /**
-     * <b>Verificar Ação:</b> Retorna TRUE se ação for efetuada ou FALSE se não. Para verificar erros
-     * execute um getError();
-     * @return string $Var = True(com o id) or False
+     * Consultar histórico de registros
+     *
+     * @param integer $limit
+     * @param integer $offset
+     * @param string $order
+     * @return void
      */
-    public function getResult(): string
+    public function readHistory(int $limit, int $offset, string $order): void
+    {
+        $history = $this->tab_altura->find()->limit($limit)->offset($offset)->order($order)->fetch(true);
+
+        if ($history) {
+            $this->Result = $this->passeAllDataArray($history);
+            $this->Error = "Sucesso!";
+        } else {
+            $this->Result = false;
+            $this->Error = "Ainda não existem cadastros realizados!";
+        }
+    }
+
+    /**
+     * Consultar dados de um registro
+     *
+     * @param integer $id
+     * @return null|Object
+     */
+    public function deleteCadastro(int $id)
+    {
+        $cad = $this->tab_altura->find("altura_id = :id", "id=" . $id)->fetch(true);
+        if ($cad) {
+            $this->Result = $cad[0]->destroy();
+            $this->Error = "Sucesso!";
+        } else {
+            $this->Result = false;
+            $this->Error = "O cadastro não existe ou já foi excluído!";
+        }
+    }
+
+    /**
+     * Verificar Ação. Para verificar erros execute um getError();
+     * @return bool|array|object|string
+     */
+    public function getResult()
     {
         return $this->Result;
     }
 
     /**
-     * <b>Obter Erro:</b> Retorna um string com o erro.
-     * @return string $Error = String com o erro
+     * Obter Erro. Retorna um string com o erro.
+     * @return string
      */
     public function getError(): string
     {

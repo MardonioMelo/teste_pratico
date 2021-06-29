@@ -49,10 +49,9 @@ class TabAltura extends DataLayer
     }
 
 
-    /**
-     * <b>Verificar Ação:</b> Retorna TRUE se ação for efetuada ou FALSE se não. Para verificar erros
-     * execute um getError();
-     * @return BOOL $Var = True(com os dados) or False
+   /**
+     * Verificar Ação. Para verificar erros execute um getError();
+     * @return bool|array|object|string
      */
     public function getResult()
     {
@@ -60,10 +59,10 @@ class TabAltura extends DataLayer
     }
 
     /**
-     * <b>Obter Erro:</b> Retorna um string com um erro e um tipo.
-     * @return string $Error = String com o erro
+     * Obter Erro. Retorna um string com o erro.
+     * @return string
      */
-    public function getError()
+    public function getError(): string
     {
         return $this->Error;
     }

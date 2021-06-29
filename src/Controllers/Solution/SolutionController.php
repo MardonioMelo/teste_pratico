@@ -61,7 +61,61 @@ class SolutionController
         $result = [];
         $result['result'] = $this->solution_model->getResult();
         $result['error'] = $this->solution_model->getError();
-        $result['estimativa'] = $estimativa;       
+        $result['estimativa'] = $estimativa;
+
+        $payload = $this->solution_view->encodeJson($result);
+        $response->getBody()->write($payload);
+        return $response;
+    }
+
+    /**
+     * Consultar os dados cadastrados
+     *
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return void
+     */
+    public function readSolutionOne(Request $request, Response $response, array $args)
+    {
+        // Get all POST parameters
+        $params = (array)$request->getParsedBody();
+    
+        $this->solution_model->readHistory(
+            (int) strip_tags($params['limit']), 
+            (int) strip_tags($params['offset']), 
+            "altura_id DESC"
+        );
+
+        //Response
+        $result = [];
+        $result['result'] = $this->solution_model->getResult();
+        $result['error'] = $this->solution_model->getError();
+
+        $payload = $this->solution_view->encodeJson($result);
+        $response->getBody()->write($payload);
+        return $response;
+    }
+
+    /**
+     * Deletar dados cadastrados
+     *
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return void
+     */
+    public function deleteSolutionOne(Request $request, Response $response, array $args)
+    {
+        // Get all POST parameters
+        $params = (array)$request->getParsedBody();
+    
+        $this->solution_model->deleteCadastro((int) strip_tags($params['cad']));
+
+        //Response
+        $result = [];
+        $result['result'] = $this->solution_model->getResult();
+        $result['error'] = $this->solution_model->getError();
 
         $payload = $this->solution_view->encodeJson($result);
         $response->getBody()->write($payload);
