@@ -2,43 +2,6 @@ $(document).ready(function () {
 
     const j_history = $('#j_history')
 
-    //Excluir cadastros
-    function deleteCadastro() {
-
-        $(".j_delete").on("click", function () {
-
-            let cad = Number($(this)[0].dataset.id)
-
-            if (cad > 0) {
-                $.ajax({
-                    type: "POST",
-                    url: "one/delete",
-                    data: { "cad": cad },
-                    dataType: "JSON",
-                    success: function (response) {
-                        if (response.result) {
-
-                            $('#tr_' + cad).remove();
-
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Sucesso!',
-                                text: response.error
-                            })
-
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops!!!',
-                                text: response.error
-                            })
-                        }
-                    }
-                });
-            }
-        })
-    }
-
     //Cadastro de alturas
     $('#j_create').on("click", function (event) {
 
@@ -101,6 +64,48 @@ $(document).ready(function () {
         return false
     })
 
+    //Atualizar lista
+    $('#j_refresh').on("click", function (event) {
+        readHistory(10, 0)
+    })
+
+    //Excluir cadastros
+    function deleteCadastro() {
+
+        $(".j_delete").on("click", function () {
+
+            let cad = Number($(this)[0].dataset.id)
+
+            if (cad > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "one/delete",
+                    data: { "cad": cad },
+                    dataType: "JSON",
+                    success: function (response) {
+                        if (response.result) {
+
+                            $('#tr_' + cad).remove();
+
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Sucesso!',
+                                text: response.error
+                            })
+
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops!!!',
+                                text: response.error
+                            })
+                        }
+                    }
+                });
+            }
+        })
+    }
+
     //html de uma linda da tabela do histórico 
     function lineHistory(num, chico, juca, estimativa) {
         return "<tr id='tr_" + num + "'>" +
@@ -116,12 +121,13 @@ $(document).ready(function () {
 
     //html de uma linda da tabela do histórico 
     function lineHistoryEmpty(msg) {
-        return "<tr><th scope='row' colspan='4' >" + msg + "</th></tr>";
+        return "<tr class='text-center'><th scope='row' colspan='5' >" + msg + "</th></tr>";
     }
 
     //Consultar histórico de estimativas
     function readHistory(limit, offset) {
         let lines;
+        $(j_history).html(lineHistoryEmpty('<i class="fa fa-spin fa-2x fa-sync"></i>'));
         $.ajax({
             type: "POST",
             url: "one/read",
@@ -138,11 +144,14 @@ $(document).ready(function () {
                             value.altura_estimativa
                         )
                     })
-                    $(j_history).html(lines)
+                    setTimeout(function () {
+                        $(j_history).html(lines).fadeIn("Slow")
+                        deleteCadastro()
+                    }, 1000);
+
                 } else {
                     $(j_history).html(lineHistoryEmpty(response.error))
                 }
-                deleteCadastro()
             }
         });
     }

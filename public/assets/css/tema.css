@@ -11054,3 +11054,14 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+@media print{
+  .noprint{
+      display:none;
+  }
+}
+
+@page{
+ size: auto;
+ margin: 0mm;
+}

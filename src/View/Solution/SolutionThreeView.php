@@ -5,9 +5,9 @@ namespace Src\View\Solution;
 use Src\View\DefaultView\DefaultView;
 
 /**
- * Class para administrar view das soluções
+ * Class para administrar view das solução Three
  */
-class SolutionView extends DefaultView
+class SolutionThreeView extends DefaultView
 {
     private $path;
 
@@ -23,13 +23,13 @@ class SolutionView extends DefaultView
      * @param array $data
      * @return string
      */
-    public function tplSolutionOne(): string
+    public function tplSolution(): string
     {
         return $this->page(
             $this->head(),
             $this->body(
                 ["navbar", "content", "footer", "scriptjs", "path"],
-                [$this->navbar(), $this->content(), $this->footer(), "solution_one", $this->path]
+                [$this->navbar(), $this->content(), $this->footer(), "solution_three", $this->path]
             )
         );
     }
@@ -79,7 +79,7 @@ class SolutionView extends DefaultView
      */
     public function content(): string
     {
-        $this->setTplHtml("solution/content_one");
+        $this->setTplHtml("solution/content_three");
         return $this->getWrite();
     }
 

@@ -5,7 +5,7 @@ namespace Src\Models;
 use Src\Models\DataBase\TabAltura;
 
 /**
- * Class responsável por gerenciar os dados do problema 1
+ * Class responsável por gerenciar o Model da solução One
  */
 class  SolutionOneModel
 {
@@ -15,7 +15,7 @@ class  SolutionOneModel
     private $Result;
 
     /**
-     * Declara a classe TabAltura na inicialização
+     * Set class de abstração do banco de dados
      */
     public function __construct()
     {

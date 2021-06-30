@@ -33,5 +33,20 @@ class HomeController
         $response->getBody()->write($payload);
         return $response;
     }    
+
+     /**
+     * Executa pagina de erro 404
+     *
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return void
+     */
+    public function page404(Request $request, Response $response, array $args)
+    {
+        $payload = $this->home_view->tpl404();
+        $response->getBody()->write($payload);
+        return $response;
+    }    
     
 }

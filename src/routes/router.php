@@ -1,8 +1,10 @@
 <?php
 
-use Slim\Exception\HttpNotFoundException;
 use Src\Controllers\Home\HomeController;
-use Src\Controllers\Solution\SolutionController;
+use Slim\Exception\HttpNotFoundException;
+use Src\Controllers\Solution\SolutionOneController;
+use Src\Controllers\Solution\SolutionTwoController;
+use Src\Controllers\Solution\SolutionThreeController;
 
 
 $app->options('/{routes:.+}', function ($request, $response, $args) {
@@ -24,15 +26,18 @@ $app->add(function ($request, $handler) {
 
 //Rotas GET
 $app->get('/', HomeController::class . ":pageHome");
-$app->get('/solucao/1', SolutionController::class . ":pageSolutionOne");
-$app->get('/solucao/2', SolutionController::class . ":pageSolutionTwo");
-$app->get('/solucao/3', SolutionController::class . ":pageSolutionThree");
-$app->get('/solucao/4', SolutionController::class . ":pageSolutionFour");
+$app->get('/404', HomeController::class . ":page404");
+$app->get('/solucao/1', SolutionOneController::class . ":pageSolution");
+$app->get('/solucao/2', SolutionTwoController::class . ":pageSolution");
+$app->get('/solucao/3', SolutionThreeController::class . ":pageSolution");
+$app->get('/solucao/4', SolutionFourController::class . ":pageSolution");
+
 
 // Rotas POST
-$app->post('/solucao/one/create', SolutionController::class . ":createSolutionOne");
-$app->post('/solucao/one/read', SolutionController::class . ":readSolutionOne");
-$app->post('/solucao/one/delete', SolutionController::class . ":deleteSolutionOne");
+$app->post('/solucao/one/create', SolutionOneController::class . ":createSolution");
+$app->post('/solucao/one/read', SolutionOneController::class . ":readSolution");
+$app->post('/solucao/one/delete', SolutionOneController::class . ":deleteSolution");
+$app->post('/solucao/three/matriz', SolutionThreeController::class . ":matrizSolution");
 
 // --------------------------+
 // Fim rotas a partir daqui
@@ -52,12 +57,11 @@ try {
     $app->run();
 } catch (Exception $e) {
 
-    header("Location: " . PATH_SUB);
+    header("Location: " . PATH_SUB."/404");
 
     $arr = [
         "success" => false,
         "error" => "Esta ação não é permitida!"
     ];
-
     die(json_encode($arr));
 }

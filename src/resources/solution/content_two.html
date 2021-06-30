@@ -1,0 +1,134 @@
+<!-- Heading-->
+<header class="masthead bg-primary text-white text-center noprint">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Heading Title-->
+        <h1 class="masthead-heading text-uppercase mb-0">
+            <a>Teste Prático #2</a>
+        </h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Section-->
+<section class="page-section">
+    <div class="container noprint">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Problema</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-lg-2 mb-2">
+                <img class="img-fluid" src="{{path}}assets/img/biblioteca.png" alt="biblioteca" />
+            </div>
+            <div class="col-md-10 col-lg-10 mb-10">
+                A biblioteca de uma universidade deseja fazer um algoritmo que leia o nome do livro que será emprestado,
+                o tipo de usuário (professor ou aluno), o algoritmo deve imprimir um recibo mostrando o nome do livro, o
+                tipo de usuário por extenso e o total de dias de empréstimo. Considerar que o professor tem 10 dias para
+                devolver o livro e o aluno somente 3 dias.
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Solução</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Selecione tipo de usuário, nome do usuário cadastrado e o livro que será
+                    emprestado.</p>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-12">
+                <form>
+                    <label class="form-label">Tipo de Usuário</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="j_type_select">
+                        </select>
+                        <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                    </div>
+                    <label class="form-label">Usuário</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="j_user_select">
+                            <option selected disabled>Selecione o tipo de usuário</option>
+                        </select>
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <label class="form-label">Titulo do Livro</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="j_book_select"> >
+                        </select>
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="j_gerar_recibo">
+                        <i class="fa fa-file-alt"></i> Gerar Recibo
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Recibo</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Confira os dados e imprima o Recibo de empréstimo do livro.</p>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-3 justify-content-end">
+            <button type="button" class="btn btn-dark btn-sm" onclick="window.print()"><i class="fas fa-print"></i>
+                Imprimir</button>
+        </div>
+
+    </div>
+    <div class="container" id="j_div_print">
+        <div class="row mb-2 justify-content-center">
+            <div class="col-md-12 col-md-6 col-lg-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">
+                            < <i class="fa fa-graduation-cap" aria-hidden="true"></i> /> Biblioteca T.PRÁTICO
+                        </strong>
+                        <h3 class="mb-0">Recibo de Empréstimo</h3>
+                        <div class="mb-1 text-muted"><span id="j_recibo_date"></span></div>
+                        <p class="card-text mb-auto"><b>Livro:</b> <span id="j_recibo_book"></span></p>
+                        <p class="card-text mb-auto"><b>Usuário:</b> <span id="j_recibo_user"></span></p>
+                        <p class="card-text mb-auto"><b>Tipo:</b> <span id="j_recibo_type"></span></p>
+                        <p class="card-text mb-auto"><b>Devolver:</b> <span id="j_recibo_loan_time"></span></p>
+                    </div>
+                    <div class="col-auto d-lg-block">
+                        <div class="bd-placeholder-img" width="200" height="250" >
+                            <img src="{{path}}assets/img/biblioteca.png" id="j_recibo_img" data-path="{{path}}assets/img/"  width="200" height="250"
+                                class="img-thumbnail" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

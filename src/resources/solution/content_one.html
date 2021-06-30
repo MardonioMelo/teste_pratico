@@ -15,7 +15,7 @@
 </header>
 
 <!-- Section-->
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section">
     <div class="container">
         <!-- Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Problema</h2>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-10 col-lg-10 mb-10">
                 Chico tem 1,50m e cresce 2cm por ano, enquanto Juca tem 1,10m e cresce 3cm por ano. Construa um
-                algoritmo que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico
+                algoritmo que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico.
             </div>
         </div>
 
@@ -52,19 +52,22 @@
                 <p class="text-center">Informe a altura do Chico e do Juca e veja o resultado no histórico.
                     informadas.</p>
             </div>
-            <div class="col-md-6 col-lg-6 mb-12">              
+            <div class="col-md-6 col-lg-6 mb-12">
                 <form id="j_form">
                     <label class="form-label">Altura de Chico</label>
                     <div class="input-group mb-3">
-                        <input type="text" name="chico" class="form-control altura" placeholder="Informe a altura de chico">
+                        <input type="text" name="chico" class="form-control altura"
+                            placeholder="Informe a altura de chico">
                         <span class="input-group-text">metros</span>
                     </div>
                     <label class="form-label">Altura de Juca</label>
                     <div class="input-group mb-3">
-                        <input type="text"  name="juca" class="form-control altura" placeholder="Informe a altura de Juca">
+                        <input type="text" name="juca" class="form-control altura"
+                            placeholder="Informe a altura de Juca">
                         <span class="input-group-text">metros</span>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="j_create"><i class="fas fa-save"></i> Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="j_create"><i class="fas fa-save"></i>
+                        Salvar</button>
                 </form>
             </div>
         </div>
@@ -72,7 +75,7 @@
         <div class="py-4"></div>
 
         <!-- Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" >Histórico</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Histórico</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -83,6 +86,12 @@
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12 mb-12">
                 <p class="text-center">Confira os 10 últimos registros de estimativa de crescimento.</p>
+            </div>
+            <div class="col-md-12 col-lg-12 mb-12">
+                <div class="btn-toolbar mb-3 justify-content-end">
+                    <button type="button" class="btn btn-warning btn-sm" id="j_refresh"><i class="fas fa-sync"></i>
+                        Atualizar Lista</button>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -93,7 +102,7 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="j_history">                       
+                    <tbody id="j_history">
                     </tbody>
                 </table>
             </div>

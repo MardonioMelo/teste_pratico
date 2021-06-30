@@ -1,19 +1,16 @@
 <?php
 
-namespace Src\View\Home;
+namespace Src\View\Solution;
 
 use Src\View\DefaultView\DefaultView;
 
 /**
- * Class para administrar view da home
+ * Class para administrar view das solução One
  */
-class HomeView extends DefaultView
+class SolutionOneView extends DefaultView
 {
     private $path;
 
-    /**
-     * Set pasta dos templates e o path padrão
-     */
     public function __construct()
     {
         $this->setDirTpl();
@@ -22,16 +19,17 @@ class HomeView extends DefaultView
 
     /**
      * Método para povoar e retornar conteúdo da página
-     *  
+     *
+     * @param array $data
      * @return string
      */
-    public function tplHomeView(): string
+    public function tplSolution(): string
     {
         return $this->page(
             $this->head(),
             $this->body(
                 ["navbar", "content", "footer", "scriptjs", "path"],
-                [$this->navbar(), $this->content(), $this->footer(), "home", ""]
+                [$this->navbar(), $this->content(), $this->footer(), "solution_one", $this->path]
             )
         );
     }
@@ -49,9 +47,9 @@ class HomeView extends DefaultView
             "path"
         ]);
         $this->setData([
-            "Teste Prático",
+            "Soluções - Teste Prático",
             "Teste Prático para vaga de desenvolvedor back-end",
-            ""
+            $this->path
         ]);
         $this->setTplHtml("default/head");
         return $this->getWrite();
@@ -68,7 +66,7 @@ class HomeView extends DefaultView
             "path"
         ]);
         $this->setData([
-            ""
+            $this->path
         ]);
         $this->setTplHtml("default/navbar");
         return $this->getWrite();
@@ -81,7 +79,7 @@ class HomeView extends DefaultView
      */
     public function content(): string
     {
-        $this->setTplHtml("home/content");
+        $this->setTplHtml("solution/content_one");
         return $this->getWrite();
     }
 
@@ -146,31 +144,13 @@ class HomeView extends DefaultView
     }
 
     /**
-     * Método para retornar conteúdo da página 404
-     *   
-     * @return string
-     */
-    public function tpl404(): string
-    {
-        return $this->page(
-            $this->head(),
-            $this->body(
-                ["navbar", "content", "footer", "scriptjs", "path"],
-                ["", $this->erro404(), $this->footer(), "home", ""]
-            )
-        );
-    }
-
-    /**
-     * Montar página de erro 404
+     * Formatar dados para retorno json
      *
+     * @param array|objeto $arr
      * @return string
      */
-    public function erro404(): string
+    public function encodeJson($arr): string
     {
-        $this->setDataName(["path"]);
-        $this->setData([$this->path]);
-        $this->setTplHtml("error/404");
-        return $this->getWrite();
+        return json_encode($arr);
     }
 }

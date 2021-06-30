@@ -4,22 +4,24 @@ namespace Src\Controllers\Solution;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Src\View\Solution\SolutionView;
+use Src\View\Solution\SolutionOneView;
 use Src\Models\SolutionOneModel;
 
 /**
- * Classe controller das soluções
+ * Classe controller da solução One
  */
-class SolutionController
+class SolutionOneController
 {
 
     private $solution_view;
     private $solution_model;
 
-
+    /**
+     * Set Model e View da solução One
+     */
     public function __construct()
     {
-        $this->solution_view = new SolutionView();
+        $this->solution_view = new SolutionOneView();
         $this->solution_model = new SolutionOneModel();
     }
 
@@ -31,22 +33,22 @@ class SolutionController
      * @param array $args
      * @return void
      */
-    public function pageSolutionOne(Request $request, Response $response, array $args)
+    public function pageSolution(Request $request, Response $response, array $args)
     {
-        $payload = $this->solution_view->tplSolutionOne();
+        $payload = $this->solution_view->tplSolution();
         $response->getBody()->write($payload);
         return $response;
     }
 
     /**
-     * Criar e cadastrar solução do problema 1
+     * Criar e cadastrar solução do problema
      *
      * @param Request $request
      * @param Response $response
      * @param array $args
      * @return void
      */
-    public function createSolutionOne(Request $request, Response $response, array $args)
+    public function createSolution(Request $request, Response $response, array $args)
     {
         // Get all POST parameters
         $params = (array)$request->getParsedBody();
@@ -76,7 +78,7 @@ class SolutionController
      * @param array $args
      * @return void
      */
-    public function readSolutionOne(Request $request, Response $response, array $args)
+    public function readSolution(Request $request, Response $response, array $args)
     {
         // Get all POST parameters
         $params = (array)$request->getParsedBody();
@@ -105,7 +107,7 @@ class SolutionController
      * @param array $args
      * @return void
      */
-    public function deleteSolutionOne(Request $request, Response $response, array $args)
+    public function deleteSolution(Request $request, Response $response, array $args)
     {
         // Get all POST parameters
         $params = (array)$request->getParsedBody();

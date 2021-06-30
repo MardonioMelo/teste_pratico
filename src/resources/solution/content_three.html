@@ -1,0 +1,252 @@
+<!-- Heading-->
+<header class="masthead bg-primary text-white text-center noprint">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Heading Title-->
+        <h1 class="masthead-heading text-uppercase mb-0">
+            <a>Teste Prático #3</a>
+        </h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Section-->
+<section class="page-section">
+    <div class="container noprint">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Problema</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-lg-2 mb-2">
+                <img class="img-fluid" src="{{path}}assets/img/matriz.png" alt="biblioteca" />
+            </div>
+            <div class="col-md-10 col-lg-10 mb-10">
+                Criar um algoritmo que gere uma matriz 5x5 e imprima: toda a matriz, a matriz gerada apenas com os
+                números impares e outra só com os números pares.
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Solução</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Digite um número qualquer e clique em "Gerada Matriz" para criar a matriz,
+                    imprimir os números impares e pares separadamente.</p>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-12">
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="n_matriz" placeholder="Digite um número qualquer">
+                        <button class="btn btn-primary" id="j_gerar_matriz" type="button"><i class="fas fa-cogs"></i>
+                            Gerar Matriz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Matriz</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-object-group"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Confira a matriz e os números pares e impares separados.</p>
+            </div>
+            <div class="col-md-10 col-lg-6 mb-6">
+                <h4>Matriz</h4>
+                <table class="table table-dark table-bordered text-center">
+                    <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
+                            <th scope="col">3</th>
+                            <th scope="col">4</th>
+                            <th scope="col">5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-active">1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">4</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Matriz - Números Pares</h4>
+                <table class="table table-dark table-bordered text-center">
+                    <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
+                            <th scope="col">3</th>
+                            <th scope="col">4</th>
+                            <th scope="col">5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-active">1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">4</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Matriz - Números Impares</h4>
+                <table class="table table-dark table-bordered text-center">
+                    <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
+                            <th scope="col">3</th>
+                            <th scope="col">4</th>
+                            <th scope="col">5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-active">1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">3</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">4</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td class="table-active">5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
