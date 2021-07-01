@@ -21,5 +21,3 @@ define("DATA_LAYER_CONFIG", [
         PDO::ATTR_CASE => PDO::CASE_NATURAL
     ]
 ]);
-
-define("LINK_ZAP", "https://api.whatsapp.com/send?phone=5562991002841&text=Ol%C3%A1!%20Quero%20dar%20minha%20avalia%C3%A7%C3%A3o%20sobre%20o%20projeto%20que%20voc%C3%AA%20fez!");
