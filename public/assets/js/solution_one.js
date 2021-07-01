@@ -43,6 +43,7 @@ $(document).ready(function () {
                         j_history.prepend(lineHistory(response.result, chico.val(), juca.val(), response.estimativa)).fadeIn('slow');
                         chico.val('')
                         juca.val('')
+                        deleteCadastro()
 
                         Swal.fire({
                             icon: 'success',
@@ -59,6 +60,7 @@ $(document).ready(function () {
                     }
                 }
             });
+            
         }
 
         return false
