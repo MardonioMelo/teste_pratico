@@ -4,6 +4,7 @@ use Src\Controllers\Home\HomeController;
 use Slim\Exception\HttpNotFoundException;
 use Src\Controllers\Solution\SolutionOneController;
 use Src\Controllers\Solution\SolutionTwoController;
+use Src\Controllers\Solution\SolutionFourController;
 use Src\Controllers\Solution\SolutionThreeController;
 
 
@@ -38,6 +39,7 @@ $app->post('/solucao/one/create', SolutionOneController::class . ":createSolutio
 $app->post('/solucao/one/read', SolutionOneController::class . ":readSolution");
 $app->post('/solucao/one/delete', SolutionOneController::class . ":deleteSolution");
 $app->post('/solucao/three/matriz', SolutionThreeController::class . ":matrizSolution");
+$app->post('/solucao/four/fibonacci', SolutionFourController::class . ":fibonacciSolution");
 
 // --------------------------+
 // Fim rotas a partir daqui

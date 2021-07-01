@@ -70,7 +70,7 @@
             <!-- Portfolio Item 4-->
             <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                 <div class="portfolio-item mx-auto j_portfolio" data-bs-toggle="modal" data-bs-target="#portfolioModal"
-                    data-desc="Criar um algoritmo com um campo que possa receber apenas números e vírgulas, separe os valores enviados e valide aqueles que são um número válido da Sequência de Fibonacci e imprima os números de forma crescente, conforme o exemplo: CAMPO RECEBE: 1,13,55,21,5,83 | IMPRIME: 1,5,13,21,55"
+                    data-desc="Criar um algoritmo com um campo que possa receber apenas números e vírgulas, separe os valores enviados e valide aqueles que são um número válido da Sequência de Fibonacci e imprima os números de forma crescente, conforme o exemplo: CAMPO RECEBE: 1,13,55,21,5,83 | IMPRIME: 1,5,13,21,55."
                     data-img="assets/img/fibonacci.png" data-title="Problema #4" data-alt="fibonacci" data-num="4">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i
@@ -129,52 +129,9 @@
         <!-- Contact Section Form-->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-7">
-
-                <form id="contactForm">
-                    <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Digite seu nome..."
-                            data-sb-validations="required" />
-                        <label for="name">Nome</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório
-                            informar.</div>
-                    </div>
-                    <!-- Phone number input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(00) 0 0000-0000"
-                            data-sb-validations="required" />
-                        <label for="phone">WhatsApp</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A número do seu WhatsApp é
-                            obrigatório informar.</div>
-                    </div>
-                    <!-- Message input-->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text"
-                            placeholder="Digite sua mensagem aqui..." style="height: 10rem"
-                            data-sb-validations="required"></textarea>
-                        <label for="message">Freedback</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A mensagem é obrigatório
-                            informar.</div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Mensagem enviada com sucesso!</div>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Erro ao enviar mensagem!</div>
-                    </div>
-                    <!-- Submit Button-->
-                    <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit"><i
-                            class="fa fa-comment"></i> Enviar</button>
-                </form>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="https://api.whatsapp.com/send?phone=5562991002841&text=Ol%C3%A1!%20Quero%20dar%20minha%20avalia%C3%A7%C3%A3o%20sobre%20o%20projeto%20que%20voc%C3%AA%20fez!" target="_blank" class="btn btn-primary btn-lg"><i class="far fa-comments"></i> Vamos Conversar ?</a>
+                </div>              
             </div>
         </div>
     </div>

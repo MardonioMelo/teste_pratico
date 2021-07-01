@@ -1,0 +1,91 @@
+<!-- Heading-->
+<header class="masthead bg-primary text-white text-center noprint">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Heading Title-->
+        <h1 class="masthead-heading text-uppercase mb-0">
+            <a>Teste Prático #4</a>
+        </h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Section-->
+<section class="page-section">
+    <div class="container noprint">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Problema</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-lg-2 mb-2">
+                <img class="img-fluid" src="{{path}}assets/img/fibonacci.png" alt="biblioteca" />
+            </div>
+            <div class="col-md-10 col-lg-10 mb-10">
+                Criar um algoritmo com um campo que possa receber apenas números e vírgulas, separe os valores enviados e valide aqueles que são um número válido da Sequência de Fibonacci e imprima os números de forma crescente, conforme o exemplo: CAMPO RECEBE: 1,13,55,21,5,83 | IMPRIME: 1,5,13,21,55.
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Solução</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Digite um ou mais números separados por vírgula para verificar se fazem parte da sequência Fibonacci.</p>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-12">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control num_vir" name="n_numbers" placeholder="Digite os números, ex.: 1,13,55,21,5,83">
+                    <button class="btn btn-primary" id="j_fibonacci_send" type="button"><i class="fa fa-calculator"></i>
+                        Verificar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-4"></div>
+
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Fibonacci</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fa fa-calculator"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 mb-12">
+                <p class="text-center">Confira quais números digitados fazem parte da sequência Fibonacci.</p>
+            </div>
+            <div class="col-md-10 col-lg-6 mb-6">
+                <div class="card text-white bg-secondary mb-3" >
+                    <div class="card-header">Resultado</div>
+                    <div class="card-body">
+                      <h5 class="card-title" id="j_fibonacci_seq"></h5>
+                      <p class="card-text" id="j_fibonacci_text"></p>
+                      <p class="card-text">Avaliação:</p>
+                      <ul id="j_fibonacci_text_desc">
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>

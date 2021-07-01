@@ -49,17 +49,16 @@
         <!-- Grid Items-->
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12 mb-12">
-                <p class="text-center">Digite um número qualquer e clique em "Gerada Matriz" para criar a matriz,
-                    imprimir os números impares e pares separadamente.</p>
+                <p class="text-center">Digite um número qualquer que seja maior que "5" e clique em "Gerar Matriz" Será
+                    exibida uma matriz 5x5 com números aleatórios entre 0 e o número que você digitou, os números
+                    impares e os números pares separadamente.</p>
             </div>
             <div class="col-md-6 col-lg-6 mb-12">
-                <form>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="n_matriz" placeholder="Digite um número qualquer">
-                        <button class="btn btn-primary" id="j_gerar_matriz" type="button"><i class="fas fa-cogs"></i>
-                            Gerar Matriz</button>
-                    </div>
-                </form>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control numero" name="n_max" placeholder="Digite um número qualquer">
+                    <button class="btn btn-primary" id="j_gerar_matriz" type="button"><i class="fas fa-cogs"></i>
+                        Gerar Matriz</button>
+                </div>
             </div>
         </div>
 
@@ -91,47 +90,23 @@
                             <th scope="col">5</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="table-active">1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                    <tbody id="j_tab_matriz">                        
+                    </tbody>
+                </table>
+
+                <h4>Matriz - Números Ímpares</h4>
+                <table class="table table-dark table-bordered text-center">
+                    <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
+                            <th scope="col">3</th>
+                            <th scope="col">4</th>
+                            <th scope="col">5</th>
                         </tr>
-                        <tr>
-                            <td class="table-active">2</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">3</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">4</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">5</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                    </thead>
+                    <tbody id="j_tab_matriz_par">                      
                     </tbody>
                 </table>
 
@@ -147,103 +122,7 @@
                             <th scope="col">5</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="table-active">1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">2</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">3</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">4</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">5</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>Matriz - Números Impares</h4>
-                <table class="table table-dark table-bordered text-center">
-                    <thead>
-                        <tr class="table-active">
-                            <th scope="col">#</th>
-                            <th scope="col">1</th>
-                            <th scope="col">2</th>
-                            <th scope="col">3</th>
-                            <th scope="col">4</th>
-                            <th scope="col">5</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="table-active">1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">2</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">3</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">4</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td class="table-active">5</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                    <tbody id="j_tab_matriz_impar">                         
                     </tbody>
                 </table>
             </div>

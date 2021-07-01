@@ -137,7 +137,7 @@ class  SolutionOneModel
     }
 
     /**
-     * Verificar Ação. Para verificar erros execute um getError();
+     * Verificar Ação. 
      * @return bool|array|object|string
      */
     public function getResult()
@@ -146,7 +146,7 @@ class  SolutionOneModel
     }
 
     /**
-     * Obter Erro. Retorna um string com o erro.
+     * Obter Erro.
      * @return string
      */
     public function getError(): string

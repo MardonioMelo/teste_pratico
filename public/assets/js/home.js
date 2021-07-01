@@ -10,3 +10,4 @@ portfolioModal.on("click", function (event) {
     $("#j_portfolio_img").attr("alt", event.currentTarget.dataset.alt)
     $("#j_btn_soluction").attr("href", "solucao/" + event.currentTarget.dataset.num)
 })
+

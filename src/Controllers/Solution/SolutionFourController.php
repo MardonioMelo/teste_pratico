@@ -4,25 +4,25 @@ namespace Src\Controllers\Solution;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Src\Models\SolutionThreeModel;
-use Src\View\Solution\SolutionThreeView;
+use Src\Models\FibonacciModel;
+use Src\View\Solution\SolutionFourView;
 
 /**
- * Classe controller da solução Three
+ * Classe controller da solução Four
  */
-class SolutionThreeController
+class SolutionFourController
 {
 
     private $solution_view;
     private $solution_model;
 
     /**
-     * Set Model e View da solução Three
+     * Set Model e View da solução Four
      */
     public function __construct()
     {
-        $this->solution_view = new SolutionThreeView();
-        $this->solution_model = new SolutionThreeModel();
+        $this->solution_view = new SolutionFourView();
+        $this->solution_model = new FibonacciModel();
     }
 
     /**
@@ -41,19 +41,19 @@ class SolutionThreeController
     }
 
     /**
-     * Gerar matriz
+     * Computar e verificar sequência de números informados que fazem parte da sequência Fibonacci
      *
      * @param Request $request
      * @param Response $response
      * @param array $args
      * @return void
      */
-    public function matrizSolution(Request $request, Response $response, array $args)
+    public function fibonacciSolution(Request $request, Response $response, array $args)
     {
         // Get all POST parameters
         $params = (array)$request->getParsedBody();
-        //Gerar matriz
-        $this->solution_model->gerarMatriz((int) trim(strip_tags($params["n_max"])));
+        //Computar números
+        $this->solution_model->isFibonacci(trim(strip_tags($params["seq_numbers"])));
 
         //Response
         $result = [];
