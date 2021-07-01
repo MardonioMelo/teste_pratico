@@ -36,12 +36,13 @@ $(document).ready(function () {
                         j_fibonacci_text_desc.html(response.error.text_desc)
 
                     } else {
+                        console.log(response.error.text)
                         //Imprimir os números válidos                 
                         j_fibonacci_seq.html("")
                         //Imprimir o texto                 
-                        j_fibonacci_text.html(response.error.text)
+                        j_fibonacci_text.html(response.error.error.text)
                         //Imprimir o texto de descrição                
-                        j_fibonacci_text_desc.html("")
+                        j_fibonacci_text_desc.html("***")
                     }
                 }
             });
