@@ -10,7 +10,7 @@ $(document).ready(function () {
         let n_max = $("[name=n_max]")
         let valid = true
 
-        if (n_max.val() === "" || n_max.val() <= 5) {
+        if (n_max.val() === "" || Number(n_max.val().replace(".","")) <= 5) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Oops!!!',

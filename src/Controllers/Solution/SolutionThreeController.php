@@ -53,7 +53,7 @@ class SolutionThreeController
         // Get all POST parameters
         $params = (array)$request->getParsedBody();
         //Gerar matriz
-        $this->solution_model->gerarMatriz((int) trim(strip_tags($params["n_max"])));
+        $this->solution_model->gerarMatriz((int) str_replace(".", "", trim(strip_tags($params["n_max"]))));
 
         //Response
         $result = [];
