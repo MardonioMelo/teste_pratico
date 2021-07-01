@@ -36,11 +36,12 @@ $(document).ready(function () {
                         j_fibonacci_text_desc.html(response.error.text_desc)
 
                     } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops!!!',
-                            text: response.error.text
-                        })
+                        //Imprimir os números válidos                 
+                        j_fibonacci_seq.html("")
+                        //Imprimir o texto                 
+                        j_fibonacci_text.html(response.error.text)
+                        //Imprimir o texto de descrição                
+                        j_fibonacci_text_desc.html("")
                     }
                 }
             });
