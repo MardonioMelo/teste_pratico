@@ -155,6 +155,8 @@ $(document).ready(function () {
                 }
             })
 
+            window.scrollTo($("#j_div_print").offset());
+
         }
 
         return false
